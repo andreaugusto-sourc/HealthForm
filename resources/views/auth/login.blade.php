@@ -25,13 +25,13 @@
 
     </div>
 
-    <form action="{{route('login')}}" method="post" id="form-welcome" class="d-flex flex-column p-5">
+    <form action="{{route('login')}}" method="post" id="form-welcome" class="d-flex flex-column p-5 h-100">
         @csrf
         <img src="/images/imagem.png" alt="">
 
-        <h2 class="text-dark text-center m-3">Junte-se a nós</h2>
+        <h2 class="text-dark text-center m-3">Bem-vindo de volta</h2>
 
-        <input type="email" placeholder="E-mail" name="email">
+        <input type="email" placeholder="E-mail" name="email" required>
 
         <input type="password" placeholder="Senha" name="password" required>
 
