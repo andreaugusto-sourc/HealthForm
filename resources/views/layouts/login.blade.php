@@ -12,19 +12,6 @@
 </head>
 <body>
     <div class='container'>
-        <nav class="navbar">
-            <div class="container-fluid">
-                <img src="/images/logo.png" class="">
-                @auth
-                    <form action="{{route('logout')}}" method="POST">
-                    @csrf
-                    <a class="nav-link text-light navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
-                    this.closest('form').submit();">Sair</a>
-                    </form>
-                @endauth
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('welcome')}}">HealthForm</a>
-            </div>
-        </nav>
         @yield('content')
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
