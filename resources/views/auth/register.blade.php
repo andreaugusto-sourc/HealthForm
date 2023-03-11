@@ -7,17 +7,14 @@
 <form action="{{route('register')}}" method="post" id="form-welcome" class="d-flex flex-column p-5">
     @csrf
         <h1 class="text-center text-dark w-100">Junte-se a nós</h1>
-        <label for="name" class="text-dark fs-5 fw-bold">Nome:</label>
-        <input type="text" name="name">
+
+        <input type="text" name="name" placeholder="Nome">
     
-        <label for="email" class="text-dark fs-5 fw-bold">E-mail:</label>
-        <input type="email" name="email" required>
-    
-        <label for="password" class="text-dark fs-5 fw-bold">Senha:</label>
-        <input type="password" name="password" required>
-    
-        <label for="password" class="text-dark fs-5 fw-bold">Repita a senha:</label>
-        <input type="password" name="password_confirmation" required>
+        <input type="email" name="email" required placeholder="E-mail">
+
+        <input type="password" name="password" required placeholder="Senha">
+
+        <input type="password" name="password_confirmation" required placeholder="Repita a senha">
     
         <div class="d-flex-reverse m-auto pt-2">
             <button type="submit" class="fs-3 fw-bold">Cadastrar-se</button>
