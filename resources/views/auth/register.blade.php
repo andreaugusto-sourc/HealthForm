@@ -19,10 +19,9 @@
         <label for="password" class="text-dark fs-5 fw-bold">Repita a senha:</label>
         <input type="password" name="password_confirmation" required>
     
-        <div class="d-flex-reverse">
+        <div class="d-flex-reverse m-auto pt-2">
             <button type="submit" class="fs-3 fw-bold">Cadastrar-se</button>
-            <a href="{{route('login')}}" class="fs-4 ms-4 text-center text-decoration-underline fw-bold mt-3">Já possui uma conta?</a>
+            <a href="{{route('login')}}" class="text-dark fs-3 text-center fw-bold ms-5">Já possui uma conta?</a>
         </div>
-
 </form>
 @endsection

@@ -22,7 +22,7 @@
                     this.closest('form').submit();">Sair</a>
                     </form>
                 @endauth
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="#">HealthForm</a>
+                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('welcome')}}">HealthForm</a>
             </div>
         </nav>
         @yield('content')

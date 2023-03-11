@@ -16,6 +16,7 @@ h1,h2{
     font-weight: bold;
 }
 #form-welcome{
+    filter: drop-shadow(0 0 3px #000000);
     background-color: #FFFFFF;
 }
 #form-welcome img{
