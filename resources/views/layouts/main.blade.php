@@ -14,15 +14,17 @@
     <div class='container'>
         <nav class="navbar">
             <div class="container-fluid">
-                <img src="/images/logo.png" class="">
+                <div class="d-flex align-items-center pt-2 pb-2">
+                    <img src="/images/logo.png">
+                    <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('formularios.index')}}">HealthForm</a>
+                </div>
                 @auth
                     <form action="{{route('logout')}}" method="POST">
                     @csrf
-                    <a class="nav-link text-light navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
-                    this.closest('form').submit();">Sair</a>
+                    <a class="nav-link text-light fs-2 fw-bold navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
+                    this.closest('form').submit();">Logout</a>
                     </form>
                 @endauth
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('welcome')}}">HealthForm</a>
             </div>
         </nav>
         @yield('content')

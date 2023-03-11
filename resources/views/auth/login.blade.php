@@ -10,7 +10,7 @@
         <nav class="navbar mb-5">
             <div class="container-fluid p-4">
                 <img src="/images/logo.png" class="">
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="#">HealthForm</a>
+                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('formularios.index')}}">HealthForm</a>
             </div>
         </nav>
 
@@ -25,7 +25,7 @@
 
     </div>
 
-    <form action="{{route('login')}}" method="post" id="form-welcome" class="d-flex flex-column p-5 h-100">
+    <form action="{{route('login')}}" method="post" id="form" class="min-vh-100">
         @csrf
         <img src="/images/imagem.png" alt="">
 
@@ -39,7 +39,7 @@
         <a href="{{ route('password.request') }}" class="text-decoration-underline mb-3 fw-semibold">Esqueceu sua senha?</a>
         @endif
 
-        <button type="submit" class="fs-3 fw-bold">Login</button>
+        <button type="submit">Login</button>
 
         <a href="{{route('register')}}" class="text-dark fs-3 text-center fw-bold mt-3">Crie sua conta</a>
     </form>

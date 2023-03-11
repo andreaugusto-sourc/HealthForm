@@ -15,28 +15,38 @@ a{
 h1,h2{
     font-weight: bold;
 }
-#form-welcome{
+nav img{
+    object-fit: cover;
+    width: 8vw;
+    min-width: 60px;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
     filter: drop-shadow(0 0 3px #000000);
     background-color: #FFFFFF;
 }
-#form-welcome img{
+#form img{
     width: 13vw;
     margin: 0.5em auto;
 }
-#form-welcome input{
+#form input,select{
     background-color: #E5E5E5;
     border: #777 1px solid;
     height: 50px;
     border-radius: 50px;
     margin: 0.8em 0;
 }
-#form-welcome input::placeholder{
+#form input::placeholder{
     font-size: 20px;
     font-weight: 600;
     color: #333;
     padding: 0.8em;
 }
-#form-welcome button{
+#form button{
+    font-weight: bold;
+    font-size: 30px;
     border-radius: 50px;
     background-color: #708C97;
     width: 321px;
