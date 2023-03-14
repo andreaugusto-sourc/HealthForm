@@ -6,6 +6,17 @@
 
 <form action="{{route('register')}}" method="post" id="form">
     @csrf
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <h1 class="text-center text-dark w-100">Junte-se a nós</h1>
 
         <input type="text" name="name" placeholder="Nome">
