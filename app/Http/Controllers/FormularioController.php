@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Formulario;
+use App\Models\Pergunta;
 use Illuminate\Http\Request;
 
 class FormularioController extends Controller
@@ -12,10 +13,11 @@ class FormularioController extends Controller
      */
     public function index(Request $request)
     {
+        $formularios = Formulario::all();
         if(request('finalizar')) {
             $request->session()->pull('idFormulario', null);
         }
-        return view('formularios.index');
+        return view('formularios.index',compact('formularios'));
     }
 
     /**
@@ -45,7 +47,10 @@ class FormularioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $Formulario = Formulario::findOrFail($id);
+        $perguntas = Pergunta::where(['formulario_id' => $Formulario->id])->get();
+
+        return view('formularios.show',compact('Formulario','perguntas'));
     }
 
     /**
