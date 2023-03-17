@@ -25,7 +25,7 @@
 
     </div>
 
-    <form action="{{route('login')}}" method="post" id="form" class="min-vh-100">
+    <form action="{{route('login')}}" method="post" id="form" class="min-vh-100 justify-content-center">
 
         @if ($errors->any())
             <div class="alert alert-danger">

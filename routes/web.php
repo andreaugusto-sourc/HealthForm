@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FormularioController;
 use App\Http\Controllers\PerguntaController;
+use App\Http\Controllers\RespostaController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,6 @@ Route::get('/',[AuthenticatedSessionController::class,'create'])->middleware('gu
 
 Route::resource('formularios', FormularioController::class)->middleware('auth');
 Route::resource('perguntas', PerguntaController::class)->middleware('auth');
+Route::resource('respostas', RespostaController::class)->middleware('auth');
 
 require __DIR__.'/auth.php';

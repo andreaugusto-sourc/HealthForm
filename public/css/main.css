@@ -37,12 +37,12 @@ nav img{
     height: 50px;
     border-radius: 50px;
     margin: 0.8em 0;
+    padding: 0 2rem;
 }
 #form input::placeholder{
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     color: #333;
-    padding: 0.8em;
 }
 #form button{
     font-weight: bold;
