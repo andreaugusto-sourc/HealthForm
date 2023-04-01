@@ -23,4 +23,13 @@ Route::resource('formularios', FormularioController::class)->middleware('auth');
 Route::resource('perguntas', PerguntaController::class)->middleware('auth');
 Route::resource('respostas', RespostaController::class)->middleware('auth');
 
+
+Route::resource('formularios', FormularioController::class)->only([
+    'create','store','edit','update','destroy'
+])->middleware('admin');
+
+Route::resource('formularios', FormularioController::class)->only([
+    'index', 'show'
+])->middleware('auth');
+
 require __DIR__.'/auth.php';
