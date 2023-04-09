@@ -18,9 +18,13 @@ class PerguntaController extends Controller
         
     }
 
-    public function create(Pergunta $Pergunta)
+    public function create(Request $request)
     {   
         $tiposPergunta = TiposPergunta::cases();
+        if(request("adicionarPergunta")) {
+            $idFormulario = request("adicionarPergunta");
+            $request->session()->put('idFormulario', $idFormulario);
+        }
         return view('perguntas.create',compact('tiposPergunta'));
     }
 
@@ -30,11 +34,6 @@ class PerguntaController extends Controller
         $Pergunta->formulario_id = $request->session()->get('idFormulario');
         $Pergunta->save();
         return redirect()->route('perguntas.create');
-    }
-
-    public function show(string $id)
-    {
-        //
     }
 
     public function edit(string $id)
@@ -57,10 +56,10 @@ class PerguntaController extends Controller
         return redirect()->route('formularios.index');
     }
 
-    public function dashboard()
+    public function dashboard(string $id)
     {
-        $Formularios = Formulario::all();
-        $Perguntas = Pergunta::all();
-        return view('perguntas.dashboard',compact('Formularios','Perguntas'));
+        $Formulario = Formulario::findOrFail($id);
+        $Perguntas = Pergunta::where(['formulario_id' => $id])->get();
+        return view('perguntas.dashboard',compact('Formulario','Perguntas'));
     }
 }
