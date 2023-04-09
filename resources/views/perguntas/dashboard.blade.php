@@ -9,7 +9,7 @@
                 <h1>Dashboard de {{$Formulario->titulo}}</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('perguntas.create',["adicionarPergunta" => $Formulario->id])}}" class="btn btn-success btn-lg">Adicionar pergunta</a>
+                <a href="{{route('perguntas.create',["adicionarPergunta" => $Formulario->id])}}" class="btn btn-success btn-lg">Adicionar Pergunta</a>
             </div>
         </div>
     </div>
