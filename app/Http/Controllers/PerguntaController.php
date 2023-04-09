@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Formulario;
 use App\Models\Pergunta;
+use App\Models\Resposta;
 use App\Enums\TiposPergunta;
 use Illuminate\Http\Request;
 
@@ -13,21 +15,15 @@ class PerguntaController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(Pergunta $Pergunta)
     {   
         $tiposPergunta = TiposPergunta::cases();
         return view('perguntas.create',compact('tiposPergunta'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request, Pergunta $Pergunta)
     {
         $Pergunta->fill($request->all());
@@ -36,35 +32,35 @@ class PerguntaController extends Controller
         return redirect()->route('perguntas.create');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        return view('perguntas.edit',['Pergunta' => Pergunta::findOrFail($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        Pergunta::findOrFail($id)->update($request->all());
+        return redirect()->route('formularios.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        // apaga as respostas atreladas a pergunta
+        Resposta::where(['pergunta_id' => $id])->delete();
+        // apaga a pergunta
+        Pergunta::findOrFail($id)->delete();
+        return redirect()->route('formularios.index');
+    }
+
+    public function dashboard()
+    {
+        $Formularios = Formulario::all();
+        $Perguntas = Pergunta::all();
+        return view('perguntas.dashboard',compact('Formularios','Perguntas'));
     }
 }

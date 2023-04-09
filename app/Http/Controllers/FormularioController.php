@@ -55,9 +55,9 @@ class FormularioController extends Controller
     public function destroy(string $id)
     {
         // apaga as perguntas atreladas ao formulário
-        $Perguntas = Pergunta::where(['formulario_id' => $id])->delete();
+        Pergunta::where(['formulario_id' => $id])->delete();
         // apaga o formulário
-        $Formulario = Formulario::findOrFail($id)->delete();
+        Formulario::findOrFail($id)->delete();
         return redirect()->route('formularios.index');
     }
 
