@@ -23,8 +23,8 @@ Route::resource('formularios', FormularioController::class)->middleware('auth');
 Route::resource('perguntas', PerguntaController::class)->middleware('auth');
 Route::resource('respostas', RespostaController::class)->middleware('auth');
 
-route::get('dashboard/formularios',[FormularioController::class,'dashboard'])->middleware('admin');
-route::get('dashboard/perguntas',[PerguntaController::class,'dashboard'])->middleware('admin');
+route::get('dashboard/formularios',[FormularioController::class,'dashboard'])->middleware('admin')->name('dashboard.formularios');
+route::get('dashboard/perguntas/{id}',[PerguntaController::class,'dashboard'])->middleware('admin')->name('dashboard.perguntas');
 
 Route::resource('formularios', FormularioController::class)->only([
     'create','store','edit','update','destroy'

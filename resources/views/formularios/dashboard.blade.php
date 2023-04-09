@@ -6,10 +6,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header text-dark">
-                <h1>Dashboard de formularios</h1>
+                <h1>Dashboard de formulários</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('formularios.create')}}" class="btn btn-success btn-lg">Adicionar formulario</a>
+                <a href="{{route('formularios.create')}}" class="btn btn-success btn-lg">Adicionar formulário</a>
             </div>
         </div>
     </div>
@@ -19,6 +19,8 @@
 <div class="d-flex justify-content-around align-items-center m-5">
 
     <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('formularios.show',$Formulario->id)}}">{{$Formulario->titulo}}</a>
+
+    <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('dashboard.perguntas',$Formulario->id)}}">Perguntas</a>
 
     <form action="{{route('formularios.destroy',$Formulario->id)}}" method="post">
     @csrf
