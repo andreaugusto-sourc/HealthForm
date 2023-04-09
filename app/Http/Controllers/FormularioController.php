@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 class FormularioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $formularios = Formulario::all();
@@ -20,17 +17,11 @@ class FormularioController extends Controller
         return view('formularios.index',compact('formularios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('formularios.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request, Formulario $Formulario)
     {
         $Formulario->fill($request->all());
@@ -42,9 +33,6 @@ class FormularioController extends Controller
         return redirect()->route('perguntas.create');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $Formulario = Formulario::findOrFail($id);
@@ -53,27 +41,28 @@ class FormularioController extends Controller
         return view('formularios.show',compact('Formulario','perguntas'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        return view('formularios.edit',['Formulario' => Formulario::findOrFail($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        Formulario::findOrFail($id)->update($request->all());
+        return redirect()->route('formularios.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-        //
+        // apaga as perguntas atreladas ao formulário
+        $Perguntas = Pergunta::where(['formulario_id' => $id])->delete();
+        // apaga o formulário
+        $Formulario = Formulario::findOrFail($id)->delete();
+        return redirect()->route('formularios.index');
+    }
+
+    public function dashboard() 
+    {
+        return view('formularios.dashboard',['Formularios' => Formulario::all()]);
     }
 }

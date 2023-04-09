@@ -39,6 +39,11 @@ nav img{
     margin: 0.8em 0;
     padding: 0 2rem;
 }
+#form label{
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+}
 #form input::placeholder{
     font-size: 20px;
     font-weight: 400;

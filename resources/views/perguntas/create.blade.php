@@ -8,13 +8,13 @@
     @csrf
     <h1 class="text-center text-dark w-100">Cadastre uma pergunta</h1>
 
-    <label for="texto" class="text-dark fs-4 fw-bold" required>Texto:</label>
+    <label for="texto" required>Texto:</label>
     <input type="text" name="texto">
 
-    <label for="placeholder" class="text-dark fs-4 fw-bold">Placeholder:</label>
+    <label for="placeholder">Placeholder:</label>
     <input type="text" name="placeholder">
 
-    <label for="tipo" class="text-dark fs-4 fw-bold">Tipo:</label>
+    <label for="tipo">Tipo:</label>
     <select name="tipo" required>
         <option disabled>Selecione uma opção:</option>
         @foreach ($tiposPergunta as $tipoPergunta)
