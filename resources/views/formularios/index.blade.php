@@ -8,10 +8,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h1 class="text-dark">Criação de formulários</h1>
+                <h1 class="text-dark">Página inicial</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('formularios.create')}}" class="btn btn-success btn-lg">Criar formulário</a>
+                <a href="{{route('dashboard.formularios')}}" class="btn btn-success btn-lg">Dashboard de Formulários</a>
             </div>
         </div>
     </div>

@@ -6,10 +6,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header text-dark">
-                <h1>Dashboard de formulários</h1>
+                <h1>Dashboard de Formulários</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('formularios.create')}}" class="btn btn-success btn-lg">Adicionar formulário</a>
+                <a href="{{route('formularios.create')}}" class="btn btn-success btn-lg">Adicionar Formulário</a>
             </div>
         </div>
     </div>
