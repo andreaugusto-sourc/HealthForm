@@ -4,8 +4,8 @@ namespace App\Enums;
 
 enum TiposPergunta: String
 {
-    case NUMBER = "number";
     case TEXT = "text";
+    case NUMBER = "number";
     case CHECKBOX = "checkbox";
     case RANGE = "range";
     case RADIO = "radio";
