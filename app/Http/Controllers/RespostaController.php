@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Resposta;
+use Illuminate\Support\Facades\Auth;
 
 class RespostaController extends Controller
 {
@@ -28,10 +29,10 @@ class RespostaController extends Controller
      */
     public function store(Request $request, Resposta $Resposta)
     {
-    
         for($i = 0; $i < count($request->texto); $i++) {
             $Resposta->create([
             'pergunta_id' => $request->pergunta_id[$i],
+            'user_id' => Auth::id(),
             'texto' => $request->texto[$i]
             ]);
         }

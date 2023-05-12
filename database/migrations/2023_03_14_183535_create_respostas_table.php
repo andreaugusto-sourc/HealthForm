@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('respostas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('pergunta_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('texto', 240);
             $table->foreign('pergunta_id')->references('id')->on('perguntas');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
