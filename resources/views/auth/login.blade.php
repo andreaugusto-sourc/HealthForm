@@ -38,7 +38,7 @@
         @endif
 
         @csrf
-        <img src="/images/imagem.png" alt="">
+        <img src="/images/img-brain.png" alt="">
 
         <h2 class="text-dark text-center m-3">Bem-vindo de volta</h2>
 
@@ -61,25 +61,25 @@
 
 <div class="d-flex flex-wrap w-100">
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/exemplo.png" alt="">
+        <img src="/images/img-login.png" alt="">
         <h4 class="text-center mb-4 mt-4">André Augusto Rodrigues Martins</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/exemplo.png" alt="">
+        <img src="/images/img-login.png" alt="">
         <h4 class="text-center mb-4 mt-4">Maria Eduarda Aparecida Apolinário</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/exemplo.png" alt="">
+        <img src="/images/img-login.png" alt="">
         <h4 class="text-center mb-4 mt-4">Tayna Domingues da Silva</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/exemplo.png" alt="">
+        <img src="/images/img-login.png" alt="">
         <h4 class="text-center mb-4 mt-4">Rafael Alexandre de Pinho Lopes</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
