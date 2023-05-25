@@ -18,7 +18,7 @@
 
 <div class="d-flex justify-content-around align-items-center m-5">
 
-    <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('formularios.show',$Formulario->id)}}">{{$Formulario->titulo}}</a>
+    <a class="w-50 text-white text-decoration-underline fs-3" href="{{route('formularios.show',$Formulario->id)}}">{{$Formulario->titulo}}</a>
 
     <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('dashboard.perguntas',$Formulario->id)}}">Perguntas</a>
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('formularios', function (Blueprint $table) {
             $table->id();
             $table->string('titulo',120);
+            $table->enum('ativo',['Sim',"Não"])->default("Sim");
             $table->timestamps();
         });
     }

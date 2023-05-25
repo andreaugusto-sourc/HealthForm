@@ -11,6 +11,12 @@
     <label for="">Título do formulário:</label>
     <input type="text" placeholder="Título/nome do formulário" name="titulo">
 
+    <label for="">Ativo:</label>
+    <select name="ativo">
+        <option>Sim</option>
+        <option>Não</option>
+    </select>
+
     <button type="submit">Cadastrar</button>
 </form>
 
