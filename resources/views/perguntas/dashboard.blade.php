@@ -18,7 +18,7 @@
 @foreach ($Perguntas as $Pergunta)
 <div class="d-flex justify-content-around align-items-center m-5">
 
-    <a class="w-25 text-white text-decoration-underline fs-3">{{$Pergunta->texto}}</a>
+    <a class="w-25 text-white text-decoration-none fs-3">{{$Pergunta->texto}}</a>
 
     <form action="{{route('perguntas.destroy',$Pergunta->id)}}" method="post">
     @csrf

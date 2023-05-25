@@ -10,9 +10,9 @@ class FormularioController extends Controller
 {
     public function index(Request $request)
     {
-        $formularios = Formulario::all();
-        if(request('finalizar')) {
-            $request->session()->pull('idFormulario', null);
+        $formularios = Formulario::where(['ativo' => 'Sim'])->get();
+        if ($request->session()->has('Formulario_id')) {
+            $request->session()->pull('Formulario_id', null);
         }
         return view('formularios.index',compact('formularios'));
     }

@@ -24,7 +24,7 @@
 
     <div class="d-flex-reverse m-auto pt-2">
         <button type="submit">Cadastrar</button>
-        <a href="{{route('formularios.index',['finalizar' => true])}}" class="text-dark fs-3 text-center fw-bold ms-5">Finalizar</a>
+        <a href="{{route('formularios.index')}}" class="text-dark fs-3 text-center fw-bold ms-5">Finalizar</a>
     </div>
 </form>
 @endsection

@@ -40,7 +40,7 @@
         @csrf
         <img src="/images/img-brain.png" alt="">
 
-        <h2 class="text-dark text-center m-3">Bem-vindo de volta</h2>
+        <h2 class="text-dark text-center m-3">Seja bem-vindo</h2>
 
         <input type="email" placeholder="E-mail" name="email" required>
 
