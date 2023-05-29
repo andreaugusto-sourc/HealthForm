@@ -10,7 +10,7 @@
         <nav class="navbar mb-5">
             <div class="container-fluid p-4">
                 <img src="/images/logo.png" class="">
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('formularios.index')}}">HealthForm</a>
+                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('questionarios.index')}}">HealthForm</a>
             </div>
         </nav>
 

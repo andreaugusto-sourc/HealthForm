@@ -6,10 +6,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header text-dark">
-                <h1>Dashboard de {{$Formulario->titulo}}</h1>
+                <h1>Dashboard de {{$Questionario->titulo}}</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('perguntas.create',["adicionarPergunta" => $Formulario->id])}}" class="btn btn-success btn-lg">Adicionar Pergunta</a>
+                <a href="{{route('perguntas.create',["adicionarPergunta" => $Questionario->id])}}" class="btn btn-success btn-lg">Adicionar Pergunta</a>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
 @foreach ($Perguntas as $Pergunta)
 <div class="d-flex justify-content-around align-items-center m-5">
 
-    <a class="w-25 text-white text-decoration-none fs-3">{{$Pergunta->texto}}</a>
+    <article class="w-25 text-white text-decoration-none fs-3">{{$Pergunta->texto}}</article>
 
     <form action="{{route('perguntas.destroy',$Pergunta->id)}}" method="post">
     @csrf

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formularios', function (Blueprint $table) {
+        Schema::create('questionarios', function (Blueprint $table) {
             $table->id();
             $table->string('titulo',120);
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formularios');
+        Schema::dropIfExists('questionarios');
     }
 };

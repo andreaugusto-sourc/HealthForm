@@ -37,7 +37,7 @@ class RespostaController extends Controller
             ]);
         }
 
-        return redirect()->route('formularios.index');
+        return redirect()->route('questionarios.index');
     }
 
     /**

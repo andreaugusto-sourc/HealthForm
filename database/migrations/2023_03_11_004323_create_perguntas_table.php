@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('perguntas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('formulario_id');
+            $table->unsignedBigInteger('questionario_id');
             $table->string('texto',120);
             $table->string('placeholder',60)->nullable();
             $table->string('tipo',60);
-            $table->foreign('formulario_id')->references('id')->on('formularios');
+            $table->foreign('questionario_id')->references('id')->on('questionarios');
             $table->timestamps();
         });
     }
