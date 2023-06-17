@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questionarios', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('titulo',60);
-            $table->text('descricao')->nullable();
+            $table->text('conteudo');
+            $table->binary('imagem')->nullable();
+            $table->text('errata')->nullable();
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
             $table->timestamps();
         });
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questionarios');
+        Schema::dropIfExists('posts');
     }
 };

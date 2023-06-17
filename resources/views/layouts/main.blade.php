@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="d-flex align-items-center pt-2 pb-2">
                     <img src="/images/logo.png">
-                    <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('questionarios.index')}}">HealthForm</a>
+                    <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('home')}}">HealthForm</a>
                 </div>
                 @auth
                     <form action="{{route('logout')}}" method="POST">

@@ -23,6 +23,22 @@ nav img{
 .card{
     color: #000;
 }
+.btn-default{
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 50px;
+    background-color: #708C97;
+    width: 321px;
+    height: 62px;
+    cursor: pointer;
+    border: none;
+}
+.bg-default{
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 3px #000000);
+    padding: 40px;
+}
 /* FORMS EM GERAL */
 #form{
     display: flex;
@@ -42,6 +58,7 @@ nav img{
     border-radius: 50px;
     margin: 0.8em 0;
     padding: 0 2rem;
+    color: #000;
 }
 #form label{
     font-weight: bold;
