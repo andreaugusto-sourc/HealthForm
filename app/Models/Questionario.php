@@ -9,5 +9,5 @@ class Questionario extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo','ativo'];
+    protected $fillable = ['titulo','descricao','ativo'];
 }

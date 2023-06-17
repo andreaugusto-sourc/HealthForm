@@ -8,8 +8,11 @@
     @csrf 
     <h1 class="text-center text-dark w-100">Cadastre um questionário</h1>
 
-    <label for="">Título do questionário:</label>
-    <input type="text" placeholder="Título/nome do questionário" name="titulo">
+    <label for="">Título:</label>
+    <input type="text" placeholder="Título/nome" name="titulo">
+
+    <label for="">Descrição:</label>
+    <input type="text" placeholder="Descriçao" name="descricao">
 
     <label for="">Ativo:</label>
     <select name="ativo">

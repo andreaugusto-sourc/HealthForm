@@ -12,6 +12,9 @@
     <label for="">Título do questionário:</label>
     <input type="text" value="{{$Questionario->titulo}}" name="titulo">
 
+    <label for="">Descrição do questionário:</label>
+    <input type="text" value="{{$Questionário->descricao}}" name="descricao">
+
     <label for="">Ativo:</label>
     <select name="ativo">
         @if($Questionario->ativo == "Sim")

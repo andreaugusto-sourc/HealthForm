@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('questionarios', function (Blueprint $table) {
             $table->id();
             $table->string('titulo',120);
+            $table->string('descricao')->nullable();
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
             $table->timestamps();
         });

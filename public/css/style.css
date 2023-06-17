@@ -20,6 +20,10 @@ nav img{
     width: 8vw;
     min-width: 60px;
 }
+.card{
+    color: #000;
+}
+/* FORMS EM GERAL */
 #form{
     display: flex;
     flex-direction: column;
@@ -50,6 +54,7 @@ nav img{
     color: #333;
 }
 #form button{
+    color: #fff;
     font-weight: bold;
     font-size: 30px;
     border-radius: 50px;
@@ -57,5 +62,18 @@ nav img{
     width: 321px;
     height: 62px;
     cursor: pointer;
-    border: 1px solid #222;
+    border: none;
 }
+/* PÁGINA DE HOME */
+.home div{
+    width: 40vw;
+    padding: 2rem;
+    color: #000;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+.home div img{
+    margin: 20px 0;
+    width: 300px;
+}
+/* PÁGINA DE INDEX DOS QUESTIONÁRIOS */

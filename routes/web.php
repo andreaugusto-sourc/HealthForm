@@ -3,6 +3,7 @@
 use App\Http\Controllers\QuestionarioController;
 use App\Http\Controllers\PerguntaController;
 use App\Http\Controllers\RespostaController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[AuthenticatedSessionController::class,'create'])->middleware('guest');
+Route::get('/home',[HomeController::class,'index'])->middleware('auth');
 
 Route::resource('questionarios', QuestionarioController::class)->middleware('auth');
 Route::resource('perguntas', PerguntaController::class)->middleware('auth');
