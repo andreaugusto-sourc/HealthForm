@@ -22,18 +22,7 @@ class PostController extends Controller
     public function store(Request $request, Post $Post)
     {
         $Post->fill($request->all());
-        if (isset($request->imagem)){
-             /* pegando a imagem com o name */
-            $requestImage = $request->imagem;
-             /* pegando a extensao dessa imagem */
-             $extensao = $requestImage->extension();
-             /* criptografando o caminho da imagem */
-             $imagem = md5($requestImage->getClientOriginalName() . strtotime('now') . $extensao);
-             /* movendo a imagem para a pasta images/upload com o seu novo caminho */
-             $requestImage->move(public_path('images/uploads/'), $imagem);
-             /* inserindo a imagem no post*/
-             $Post->imagem = $imagem;
-        }
+        $Post->imagem = Post::uploadImagem($request);
         $Post->save();
         return redirect()->route('posts.index');
     }
@@ -41,5 +30,39 @@ class PostController extends Controller
     public function show($id)
     {   
         return view('posts.show',['Post' => Post::findOrFail($id)]);
+    }
+
+    public function edit($id)
+    {
+        return view('posts.edit',['Post' => Post::findOrFail($id)]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $NovoPost = [
+            'titulo' => $request->titulo,
+            'conteudo' => $request->conteudo,
+            'ativo' => $request->ativo,
+            'imagem' => Post::uploadImagem($request)
+        ];
+
+        if(!isset($request->imagem)) {
+            $NovoPost['imagem'] = Post::findOrFail($id)->imagem;
+        }
+
+        Post::findOrFail($id)->update($NovoPost);
+
+        return redirect()->route('dashboard.posts');
+    }
+
+    public function destroy($id)
+    {
+        Post::findOrFail($id)->delete();
+        return redirect()->route('dashboard.posts');
+    }
+
+    public function dashboard()
+    {
+        return view('posts.dashboard',['posts' => Post::all()]);
     }
 }

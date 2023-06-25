@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('titulo',60);
             $table->text('conteudo');
             $table->binary('imagem')->nullable();
-            $table->text('errata')->nullable();
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
             $table->timestamps();
         });

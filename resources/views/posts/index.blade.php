@@ -6,7 +6,7 @@
 
 <div class="d-flex flex-column w-100">
 
-    <form class="d-flex align-items-center justify-content-around bg-dark" action="{{route('posts.index')}}" method="get">
+    <form class="d-flex align-items-center justify-content-around bg-dark pt-3 pb-3" action="{{route('posts.index')}}" method="get">
         <h2>Filtrar por:</h2>
         @csrf
         <label for="categoria" class="fs-5">Categoria:</label>
@@ -18,7 +18,7 @@
         <button type="submit" class="btn btn-light btn-lg">Filtrar</button>
     </form>
 
-    <div class="d-flex flex-wrap align-items-center">
+    <div class="d-flex flex-wrap align-items-center posts">
       @foreach ($posts as $post)
         <div class="card" style="width: 18rem;">
             <div class="card-body">
