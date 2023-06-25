@@ -24,63 +24,10 @@ nav img{
 .card{
     color: #000;
 }
-.btn-default{
-    color: #fff;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 50px;
-    background-color: #708C97;
-    width: 321px;
-    height: 62px;
-    cursor: pointer;
-    border: none;
-}
 .bg-default{
     background-color: #FFFFFF;
     filter: drop-shadow(0 0 3px #000000);
     padding: 40px;
-}
-
-#form{
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    filter: drop-shadow(0 0 3px #000000);
-    background-color: #FFFFFF;
-}
-#form img{
-    width: 13vw;
-    margin: 0.5em auto;
-}
-#form input,select{
-    background-color: #E5E5E5;
-    border: #777 1px solid;
-    height: 50px;
-    border-radius: 50px;
-    margin: 0.8em 0;
-    padding: 0 2rem;
-    color: #000;
-}
-#form label{
-    font-weight: bold;
-    font-size: 18px;
-    color: #000;
-}
-#form input::placeholder{
-    font-size: 20px;
-    font-weight: 400;
-    color: #333;
-}
-#form button{
-    color: #fff;
-    font-weight: bold;
-    font-size: 30px;
-    border-radius: 50px;
-    background-color: #708C97;
-    width: 321px;
-    height: 62px;
-    cursor: pointer;
-    border: none;
 }
 /* PÁGINA DE HOME */
 .home div{

@@ -6,14 +6,16 @@
 
 <div class="d-flex flex-column w-100">
 
-    <form class="d-flex align-items-center justify-content-around bg-dark" action="{{route('questionarios.index')}}" method="get">
+    <form class="d-flex align-items-center justify-content-around bg-dark pt-3 pb-3" action="{{route('questionarios.index')}}" method="get">
         <h2>Filtrar por:</h2>
         @csrf
-        <label for="categoria" class="fs-5">Categoria:</label>
-        <select name="categoria" id="categoria"><option>Selecione uma categoria</option></select>
 
-        <label for="ordenacao" class="fs-5">Ordernar por:</label>
-        <select name="ordenacao" id="ordenacao"><option>Data mais recente</option></select>
+        <select class="form-select form-select-lg w-50" aria-label="Default select example">
+          <option selected disabled>Categoria</option>
+          <option>One</option>
+          <option>Two</option>
+          <option>Three</option>
+        </select>
 
         <button type="submit" class="btn btn-light btn-lg">Filtrar</button>
     </form>

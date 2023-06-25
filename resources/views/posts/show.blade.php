@@ -13,7 +13,7 @@
     <div class="d-flex flex-column align-items-center">
         <h1 class="text-dark">{{$Post->titulo}}</h1>
         <p class="text-center text-dark fs-5 mb-3 lh-lg">{{$Post->conteudo}}</p>
-        <a href="{{route('posts.index')}}"><button type="submit" class="btn-default">Voltar</button></a>
+        <a href="{{route('posts.index')}}"><button type="submit" class="btn btn-primary btn-lg">Voltar</button></a>
     </div>
 
 </div>
