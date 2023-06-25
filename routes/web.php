@@ -27,6 +27,7 @@ Route::resource('perguntas', PerguntaController::class)->middleware('auth');
 Route::resource('respostas', RespostaController::class)->middleware('auth');
 Route::resource('posts', PostController::class)->middleware('auth');
 
+route::get('dashboard/posts',[PostController::class,'dashboard'])->middleware('admin')->name('dashboard.posts');
 route::get('dashboard/questionarios',[QuestionarioController::class,'dashboard'])->middleware('admin')->name('dashboard.questionarios');
 route::get('dashboard/perguntas/{id}',[PerguntaController::class,'dashboard'])->middleware('admin')->name('dashboard.perguntas');
 

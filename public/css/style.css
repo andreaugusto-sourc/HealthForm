@@ -13,6 +13,7 @@ a{
     cursor: pointer;
 }
 h1,h2{
+    text-align: center;
     font-weight: bold;
 }
 nav img{
@@ -39,7 +40,7 @@ nav img{
     filter: drop-shadow(0 0 3px #000000);
     padding: 40px;
 }
-/* FORMS EM GERAL */
+
 #form{
     display: flex;
     flex-direction: column;
@@ -91,6 +92,14 @@ nav img{
 }
 .home div img{
     margin: 20px 0;
-    width: 300px;
+    width: 21vw;
 }
-/* PÁGINA DE INDEX DOS QUESTIONÁRIOS */
+/* PÁGINA DE INDEX DOS POSTS */
+.posts p{
+    text-align: justify;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical; 
+}

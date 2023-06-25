@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="d-flex justify-content-between home">
+<section class="d-flex justify-content-between flex-wrap home">
     <div class="d-flex flex-column align-items-center">
         <h1>Textos Motivacionais</h1>
         <img src="/images/multiple-users.png" alt="">
