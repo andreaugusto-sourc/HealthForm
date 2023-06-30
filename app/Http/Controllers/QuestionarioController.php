@@ -49,7 +49,7 @@ class QuestionarioController extends Controller
     public function update(Request $request, string $id)
     {
         Questionario::findOrFail($id)->update($request->all());
-        return redirect()->route('Questionarios.index');
+        return redirect()->route('questionarios.index');
     }
 
     public function destroy(string $id)

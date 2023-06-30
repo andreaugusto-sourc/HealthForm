@@ -26,7 +26,7 @@
             <div class="card-body">
               <h5 class="card-title text-center fw-bold">{{$post->titulo}}</h5>
               <p class="card-text">{{$post->conteudo}}</p>
-              <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary">Visualizar</a>
+              <a href="{{route('posts.show', $post->id)}}" class="btn btn-primary fs-4">Visualizar</a>
             </div>
         </div>
       @endforeach

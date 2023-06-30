@@ -6,7 +6,7 @@
 
 <form action="{{route('posts.store')}}" method="post" enctype="multipart/form-data" class="d-flex flex-column bg-default">
     @csrf 
-    <h1 class="text-center text-dark w-100 display-5 fw-bold">Cadastre um texto motivacional</h1>
+    <h1 class="text-center text-dark w-100 display-5 fw-bold mb-3">Cadastre um texto motivacional</h1>
 
     <div class="input-group input-group-lg mb-3">
         <span class="input-group-text" id="inputGroup-sizing-lg">Título</span>
@@ -29,7 +29,7 @@
           <label class="input-group-text" for="inputGroupFile02">Imagem Ilustrativa (opcional)</label>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-lg fs-3">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 
 @endsection

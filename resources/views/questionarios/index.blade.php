@@ -26,7 +26,7 @@
             <div class="card-body">
               <h5 class="card-title text-center fw-bold">{{$questionario->titulo}}</h5>
               <p class="card-text">{{$questionario->descricao}}</p>
-              <a href="{{route('questionarios.show', $questionario->id)}}" class="btn btn-primary">Responder</a>
+              <a href="{{route('questionarios.show', $questionario->id)}}" class="btn btn-primary fs-4">Responder</a>
             </div>
         </div>
       @endforeach

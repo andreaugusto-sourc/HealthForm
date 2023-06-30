@@ -4,23 +4,27 @@
 
 @section('content')
 
-<form action="{{route('questionarios.store')}}" method="post" id="form">
+<form action="{{route('questionarios.store')}}" method="post" class="d-flex flex-column bg-default">
     @csrf 
-    <h1 class="text-center text-dark w-100">Cadastre um questionário</h1>
+    <h1 class="text-center text-dark w-100 display-5 fw-bold mb-3">Cadastre um questionário</h1>
 
-    <label for="">Título:</label>
-    <input type="text" placeholder="Título/nome" name="titulo">
+    <div class="input-group input-group-lg mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Título</span>
+        <input type="text" name="titulo" placeholder="Título/nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    </div>
 
-    <label for="">Descrição:</label>
-    <input type="text" placeholder="Descriçao" name="descricao">
+    <div class="input-group input-group-lg mb-3">
+        <span class="input-group-text">Descrição</span>
+        <textarea class="form-control" aria-label="With textarea" name="descricao" placeholder="Descrição"></textarea>
+    </div>
 
-    <label for="">Ativo:</label>
-    <select name="ativo">
+    <select class="form-select form-select-lg mb-3" name="ativo" aria-label=".form-select-lg example">
+        <option selected disabled>Ativo (Status)</option>
         <option>Sim</option>
         <option>Não</option>
     </select>
 
-    <button type="submit">Cadastrar</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 
 @endsection

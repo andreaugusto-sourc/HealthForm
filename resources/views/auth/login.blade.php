@@ -4,13 +4,23 @@
 
 @section('content')
 
-<section class="d-flex justify-content-around w-100">
+<section class="d-flex align-items-center justify-content-evenly w-100 login">
 
     <div class="d-flex flex-column align-items-center w-50">
-        <nav class="navbar mb-5">
-            <div class="container-fluid p-4">
-                <img src="/images/logo.png" class="">
-                <a class="navbar-brand text-white fs-1 fw-bold ms-5" href="{{route('questionarios.index')}}">HealthForm</a>
+
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center pt-2 pb-2">
+                    <img src="/images/logo.png">
+                    <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('home')}}">HealthForm</a>
+                </div>
+                @auth
+                    <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <a class="nav-link text-light fs-2 fw-bold navbar-brand" href="{{route('logout')}}" onclick="event.preventDefault();
+                    this.closest('form').submit();">Logout</a>
+                    </form>
+                @endauth
             </div>
         </nav>
 
@@ -25,7 +35,7 @@
 
     </div>
 
-    <form action="{{route('login')}}" method="post" id="form" class="min-vh-100 justify-content-center">
+    <form action="{{route('login')}}" method="post"class="min-vh-100 d-flex flex-column bg-default justify-content-center">
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -40,17 +50,17 @@
         @csrf
         <img src="/images/img-brain.png" alt="">
 
-        <h2 class="text-dark text-center m-3">Seja bem-vindo</h2>
+        <h2 class="text-dark text-center m-3">Bem-vindo de volta</h2>
 
-        <input type="email" placeholder="E-mail" name="email" required>
+        <input type="email" class="form-control form-control-lg mb-3" placeholder="E-mail" name="email" required>
 
-        <input type="password" placeholder="Senha" name="password" required>
+        <input type="password" class="form-control form-control-lg" placeholder="Senha" name="password" required>
 
         @if (Route::has('password.request'))
         <a href="{{ route('password.request') }}" class="text-decoration-underline mb-3 fw-semibold">Esqueceu sua senha?</a>
         @endif
 
-        <button type="submit">Login</button>
+        <button type="submit" class="btn btn-primary btn-lg">Login</button>
 
         <a href="{{route('register')}}" class="text-dark fs-3 text-center fw-bold mt-3">Crie sua conta</a>
     </form>
@@ -61,25 +71,25 @@
 
 <div class="d-flex flex-wrap w-100">
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/img-login.png" alt="">
+        <img src="/images/img-login.png" alt="Foto de André Augusto Rodrigues Martins">
         <h4 class="text-center mb-4 mt-4">André Augusto Rodrigues Martins</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/img-login.png" alt="">
+        <img src="/images/img-login.png" alt="Foto de Maria Eduarda Aparecida Apolinário">
         <h4 class="text-center mb-4 mt-4">Maria Eduarda Aparecida Apolinário</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/img-login.png" alt="">
+        <img src="/images/img-login.png" alt="Foto de Tayna Domingues da Silva">
         <h4 class="text-center mb-4 mt-4">Tayna Domingues da Silva</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
 
     <div class="d-flex flex-column align-items-center w-50 mb-5 mt-5">
-        <img src="/images/img-login.png" alt="">
+        <img src="/images/img-login.png" alt="Foto de Rafael Alexandre de Pinho Lopes ">
         <h4 class="text-center mb-4 mt-4">Rafael Alexandre de Pinho Lopes</h4>
         <p class="text-center fs-5 w-75 ">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
     </div>
