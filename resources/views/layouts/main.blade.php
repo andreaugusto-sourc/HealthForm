@@ -22,6 +22,9 @@
                     <img src="/images/logo.png">
                     <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('home')}}">HealthForm</a>
                 </div>
+                @if (isset(Auth::user()->admin))
+                    <a class="nav-link text-light fs-2 fw-bold navbar-brand" href="{{route('dashboard')}}">Dashboard</a>
+                @endif
                 @auth
                     <form action="{{route('logout')}}" method="POST">
                     @csrf

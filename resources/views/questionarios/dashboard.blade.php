@@ -17,19 +17,21 @@
 
 @foreach ($Questionarios as $Questionario)
 
-<div class="d-flex justify-content-around align-items-center m-5">
+<div class="d-flex justify-content-between align-items-center m-5">
 
     <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('questionarios.show',$Questionario->id)}}">{{$Questionario->titulo}}</a>
 
-    <a class="w-25 text-white text-decoration-underline fs-3" href="{{route('dashboard.perguntas',$Questionario->id)}}">Perguntas</a>
+    <a class="text-white text-decoration-underline fs-3" href="{{route('dashboard.perguntas',$Questionario->id)}}">Perguntas</a>
+
+    <a class="text-white text-decoration-underline fs-3" href="{{route('respostas.show',$Questionario->id)}}">Respostas</a>
 
     <form action="{{route('questionarios.destroy',$Questionario->id)}}" method="post">
     @csrf
     @method('delete')
-    <button type="submit" class="btn btn-danger">Deletar</button>
+    <button type="submit" class="btn btn-danger fs-5">Deletar</button>
     </form>
 
-    <button type="button" class="btn btn-primary"><a class="text-white" href="{{route('questionarios.edit',$Questionario->id)}}">Editar</a></button>
+    <button type="button" class="btn btn-primary fs-5"><a class="text-white" href="{{route('questionarios.edit',$Questionario->id)}}">Editar</a></button>
 </div>
 
 @endforeach

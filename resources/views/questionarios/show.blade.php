@@ -15,6 +15,8 @@
         <input type="hidden" name="pergunta_id[]" value={{$pergunta->id}}>
     @endforeach
 
+    <input type="hidden" name="questionario_id" value={{$Questionario->id}}>
+
     <button type="submit" class="btn btn-success">Enviar</button>
 
 </form>

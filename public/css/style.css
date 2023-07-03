@@ -24,17 +24,19 @@ nav img{
 .card{
     color: #000;
 }
+.bg-default .btn-primary{
+    border-color: #5A747D !important ;
+    background-color: #5A747D !important;
+}
 .bg-default{
+    color: #000;
     background-color: #FFFFFF;
     filter: drop-shadow(0 0 3px #000000);
-    padding: 40px;
+    padding: 2.5em;
 }
 /* PÁGINA DE HOME */
 .home div{
     width: 40vw;
-    padding: 2rem;
-    color: #000;
-    background-color: #FFFFFF;
     border-radius: 10px;
 }
 .home div img{

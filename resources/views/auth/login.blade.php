@@ -52,9 +52,9 @@
 
         <h2 class="text-dark text-center m-3">Bem-vindo de volta</h2>
 
-        <input type="email" class="form-control form-control-lg mb-3" placeholder="E-mail" name="email" required>
+        <input type="email" class="form-control form-control-lg w-100 mb-3" placeholder="E-mail" name="email" required>
 
-        <input type="password" class="form-control form-control-lg" placeholder="Senha" name="password" required>
+        <input type="password" class="form-control form-control-lg w-100" placeholder="Senha" name="password" required>
 
         @if (Route::has('password.request'))
         <a href="{{ route('password.request') }}" class="text-decoration-underline mb-3 fw-semibold">Esqueceu sua senha?</a>
