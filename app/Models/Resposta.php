@@ -9,5 +9,5 @@ class Resposta extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['pergunta_id','user_id','texto'];
+    protected $fillable = ['questionario_id','pergunta_id','user_id','texto'];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Questionario;
 use App\Models\Pergunta;
+use App\Models\Resposta;
 use Illuminate\Http\Request;
 
 class QuestionarioController extends Controller
@@ -54,6 +55,8 @@ class QuestionarioController extends Controller
 
     public function destroy(string $id)
     {
+        // apaga as respostas atreladas ao questionario
+        Resposta::where(['questionario_id' => $id])->delete();
         // apaga as perguntas atreladas ao questionario
         Pergunta::where(['questionario_id' => $id])->delete();
         // apaga o questionario
