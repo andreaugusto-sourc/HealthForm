@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Questionario;
 use App\Models\Pergunta;
 use App\Models\Resposta;
@@ -10,8 +11,9 @@ use Illuminate\Http\Request;
 class QuestionarioController extends Controller
 {
     public function index(Request $request)
-    {
-        $questionarios = Questionario::where(['ativo' => 'Sim'])->get();
+    {   
+        //Pegando os questionarios que não tem respostas e que estão com status ativo
+        $questionarios = Questionario::doesntHave('respostas')->where('ativo','Sim')->get();
         if ($request->session()->has('Questionario_id')) {
             $request->session()->pull('Questionario_id', null);
         }

@@ -9,5 +9,12 @@ class Questionario extends Model
 {
     use HasFactory;
 
+    protected $table = 'questionarios';
+
     protected $fillable = ['titulo','descricao','ativo'];
+
+    public function respostas()
+    {
+        return $this->hasMany(Resposta::class);
+    }
 }

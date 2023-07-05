@@ -10,8 +10,7 @@
             @foreach ($perguntas as $pergunta)
                 @foreach ($respostas as $resposta)
                     @if ($user->id == $resposta->user_id && $resposta->pergunta_id == $pergunta->id )
-                    <p class="fs-5">- {{$pergunta->texto}}?</p>
-                    <p class="fs-5"><strong>Resposta do usuário: </strong>{{$resposta->texto}}</p>
+                    <p class="fs-5"><strong>Pergunta do questionário: </strong> {{$pergunta->texto}}? <strong>Resposta do usuário: </strong>{{$resposta->texto}}</p>
                     @endif
                 @endforeach
             @endforeach
