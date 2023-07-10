@@ -35,6 +35,14 @@ nav img{
     padding: 2rem;
     border-radius: 10px;
 }
+.login .bg-default{
+    color: #000;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 3px #000000);
+    padding: 2rem;
+    border-radius: 0;
+}
+
 /* PÁGINA DE HOME */
 .home div{
     width: 40vw;
