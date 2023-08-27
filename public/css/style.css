@@ -47,6 +47,10 @@ nav img{
 .home div{
     width: 40vw;
 }
+.home div:hover{
+    background-color:#ededed ;
+    border: 1px solid #000;
+}
 .home div img{
     margin: 20px 0;
     width: 20vw;
@@ -83,4 +87,42 @@ nav img{
 }
 .login input{
     width: 300px;
+}
+
+/* HAMBURGUER */
+.dropdown-toggle ion-icon{
+    font-size: 1.8em;
+}
+.dropdown-toggle::after{
+    display: none;
+}
+.dropdown-menu[data-bs-popper]{
+    margin-top: 10px;
+    left: unset !important;
+    right: 0 !important;
+}
+
+.menu,.menu > span{
+    transition: all .4s ease-in-out;
+}
+.menu span{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #fff;
+}
+.menu span:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 9px);
+}
+
+.menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -7px);
 }

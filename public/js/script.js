@@ -1,4 +1,9 @@
 const titulo_texto = document.getElementById('titulo_texto');
+const menu = document.querySelector("div.menu");
+
+menu.addEventListener('click', () =>{
+    menu.classList.toggle('active');
+});
 
 let contAtual = 0;
 
