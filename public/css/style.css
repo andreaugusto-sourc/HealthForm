@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    background-color: #5A747D;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+h1,h2{
+    text-align: center;
+    font-weight: bold;
+}
+nav img{
+    object-fit: cover;
+    width: 8vw;
+    min-width: 60px;
+}
+.card{
+    color: #000;
+}
+.bg-default .btn-primary{
+    border-color: #5A747D !important ;
+    background-color: #5A747D !important;
+}
+.bg-default{
+    color: #000;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 3px #000000);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.login .bg-default{
+    color: #000;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 3px #000000);
+    padding: 2rem;
+    border-radius: 0;
+}
+
+/* PÁGINA DE HOME */
+.home div{
+    width: 40vw;
+}
+.home div:hover{
+    background-color:#ededed ;
+    border: 1px solid #000;
+}
+.home div img{
+    margin: 20px 0;
+    width: 20vw;
+}
+/* PÁGINA DE INDEX DOS POSTS */
+.posts p{
+    text-align: justify;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical; 
+}
+/* FORMS */
+.form-control{
+    border-radius: 30px;
+    font-size: 16px;
+    height: 50px !important;
+}
+.form-control::placeholder{
+    font-size: 18px;
+}
+.btn{
+    padding: 5px 30px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+/* PÁGINA DE CADASTRO E LOGIN */
+.login nav{
+    position: absolute !important;
+    top: 2%;
+    left: 10%;
+}
+.login input{
+    width: 300px;
+}
+
+/* HAMBURGUER */
+.dropdown-toggle ion-icon{
+    font-size: 1.8em;
+}
+.dropdown-toggle::after{
+    display: none;
+}
+.dropdown-menu[data-bs-popper]{
+    margin-top: 10px;
+    left: unset !important;
+    right: 0 !important;
+}
+
+.menu,.menu > span{
+    transition: all .4s ease-in-out;
+}
+.menu span{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #fff;
+}
+.menu span:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.show .menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.show .menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 9px);
+}
+
+.show .menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -7px);
+}
