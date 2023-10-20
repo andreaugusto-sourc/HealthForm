@@ -14,7 +14,7 @@
     </div>
 
     <div class="input-group input-group-lg mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Exemplo de resposta (opcional)</span>
+        <span class="input-group-text" id="inputGroup-sizing-lg">Exemplo ou orientação de como responder (opcional)</span>
         <input type="text" name="placeholder" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
     </div>
 
