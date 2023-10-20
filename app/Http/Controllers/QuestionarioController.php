@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use App\Models\Categoria;
 use App\Models\Questionario;
 use App\Models\Pergunta;
 use App\Models\Resposta;
@@ -22,7 +22,7 @@ class QuestionarioController extends Controller
 
     public function create()
     {
-        return view('questionarios.create');
+        return view('questionarios.create', ['categorias' => Categoria::all()]);
     }
 
     public function store(Request $request, Questionario $Questionario)

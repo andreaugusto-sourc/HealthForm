@@ -9,12 +9,12 @@
     <h1 class="text-center text-dark w-100 display-5 fw-bold mb-3">Cadastre uma pergunta</h1>
 
     <div class="input-group input-group-lg mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Texto</span>
-        <input type="text" name="texto" placeholder="Escreva uma pergunta aqui" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
+        <span class="input-group-text" id="inputGroup-sizing-lg">Texto da pergunta</span>
+        <input type="text" name="texto" placeholder="Não coloque '?' no final da pergunta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
     </div>
 
     <div class="input-group input-group-lg mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Placeholder (opcional)</span>
+        <span class="input-group-text" id="inputGroup-sizing-lg">Exemplo de resposta (opcional)</span>
         <input type="text" name="placeholder" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
     </div>
 
