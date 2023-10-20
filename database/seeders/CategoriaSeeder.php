@@ -15,7 +15,7 @@ class CategoriaSeeder extends Seeder
     {
         DB::table('categorias')->insert([
             [
-                'nome' => 'Saúde e Bem-Estar',
+                'nome' => 'Saúde Mental e Bem-Estar',
             ],
             [
                 'nome' => 'Vulnerabilidade Social',

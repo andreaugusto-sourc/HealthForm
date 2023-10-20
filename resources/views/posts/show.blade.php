@@ -7,7 +7,7 @@
 <div class="d-flex justify-content-center align-items-center bg-default">
 
     @isset($Post->imagem)
-    <img src="/images/uploads/{{$Post->imagem}}" alt="{{$Post->titulo}}">
+    <img src="/images/uploads/{{$Post->imagem}}" alt="{{$Post->titulo}}" class='w-50'>
     @endisset
  
     <div class="d-flex flex-column align-items-center">
