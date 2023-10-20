@@ -10,11 +10,21 @@
         <h2>Filtrar por:</h2>
         @csrf
 
-        <select class="form-select form-select-lg w-50" aria-label="Default select example">
-          <option selected disabled>Categoria</option>
-          <option>One</option>
-          <option>Two</option>
-          <option>Three</option>
+        <select class="form-select form-select-lg w-50" aria-label="Default select example" name="categoria_id">
+          @foreach ($categorias as $categoria)
+    
+          @if (!isset($categoria_id))
+            <option selected disabled>Categorias</option>
+            <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+          @else
+            @if ($categoria->id != $categoria_id) 
+            <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+            @else
+            <option selected disabled>{{$categoria->nome}}</option>
+            @endif
+          @endif
+
+          @endforeach
         </select>
 
         <button type="submit" class="btn btn-light btn-lg">Filtrar</button>
