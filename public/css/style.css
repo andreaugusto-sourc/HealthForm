@@ -20,6 +20,7 @@ nav img{
     object-fit: cover;
     width: 8vw;
     min-width: 60px;
+    max-width: 120px;
 }
 .card{
     color: #000;
@@ -50,6 +51,9 @@ nav img{
 .home div:hover{
     background-color:#ededed ;
     border: 1px solid #000;
+}
+.home div h1{
+    height: 100px;
 }
 .home div img{
     margin: 20px 0;
@@ -125,4 +129,14 @@ nav img{
 
 .show .menu.active span:nth-child(3) {
     transform: rotate(45deg) translate(-7px, -7px);
+}
+
+@media (max-width: 1000px) {
+    .home{
+        justify-content: center !important;
+    }
+    .home div{
+        width: 60vw;
+        margin: 20px 0;
+    }
 }

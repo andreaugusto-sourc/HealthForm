@@ -8,7 +8,7 @@
 <a href="{{route('dashboard.posts')}}" class="text-center">
     <div class="d-flex flex-column align-items-center bg-default">
         <h1>Dashboard de Posts</h1>
-        <img src="/images/multiple-users.png" alt="">
+        <img src="/images/multiple-users.png" alt="Imagem de uma publicação">
     </div>
 </a>
 
