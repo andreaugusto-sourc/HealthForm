@@ -11,7 +11,7 @@ class Questionario extends Model
 
     protected $table = 'questionarios';
 
-    protected $fillable = ['titulo','descricao','ativo'];
+    protected $fillable = ['titulo','descricao','ativo','categoria_id'];
 
     public function respostas()
     {

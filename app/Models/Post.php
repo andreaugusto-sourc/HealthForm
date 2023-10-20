@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    Protected $fillable = ['titulo','conteudo','ativo','imagem'];
+    Protected $fillable = ['titulo','conteudo','ativo','imagem','categoria_id'];
 
     public static function uploadImagem($request) 
     {
