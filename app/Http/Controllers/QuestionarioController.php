@@ -12,12 +12,24 @@ class QuestionarioController extends Controller
 {
     public function index(Request $request)
     {   
-        //Pegando os questionarios que não tem respostas e que estão com status ativo
-        $questionarios = Questionario::doesntHave('respostas')->where('ativo','Sim')->get();
         if ($request->session()->has('Questionario_id')) {
             $request->session()->pull('Questionario_id', null);
         }
-        return view('questionarios.index',compact('questionarios'));
+
+        $categorias = Categoria::all();
+
+        if(isset($request->categoria_id)) {
+            $questionarios = Questionario::doesntHave('respostas')->where([['ativo','Sim'], ['categoria_id', $request->categoria_id]])->get();
+            $categoria_id = $request->categoria_id;
+
+            return view('questionarios.index',compact('questionarios','categorias', 'categoria_id'));
+        }
+
+        //Pegando os questionarios que não tem respostas e que estão com status ativo
+        $questionarios = Questionario::doesntHave('respostas')->where('ativo','Sim')->get();
+
+
+        return view('questionarios.index',compact('questionarios','categorias'));
     }
 
     public function create()
