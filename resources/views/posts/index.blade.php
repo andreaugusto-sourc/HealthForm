@@ -11,17 +11,21 @@
         @csrf
 
         <select class="form-select form-select-lg w-50" aria-label="Default select example" name="categoria_id">
+
+          <option value="Todas" selected>Todas</option>
+
           @foreach ($categorias as $categoria)
-    
-          @if (!isset($categoria_id))
-            <option selected disabled>Categorias</option>
-            <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
-          @else
+
+          @if (isset($categoria_id))
+          
             @if ($categoria->id != $categoria_id) 
             <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
             @else
             <option selected disabled>{{$categoria->nome}}</option>
             @endif
+
+          @else
+          <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
           @endif
 
           @endforeach

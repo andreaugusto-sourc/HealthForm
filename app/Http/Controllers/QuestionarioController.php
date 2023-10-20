@@ -18,7 +18,7 @@ class QuestionarioController extends Controller
 
         $categorias = Categoria::all();
 
-        if(isset($request->categoria_id)) {
+        if(isset($request->categoria_id) && $request->categoria_id != "Todas") {
             $questionarios = Questionario::doesntHave('respostas')->where([['ativo','Sim'], ['categoria_id', $request->categoria_id]])->get();
             $categoria_id = $request->categoria_id;
 

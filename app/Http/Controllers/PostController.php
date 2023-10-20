@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         $categorias = Categoria::all();
 
-        if (isset($request->categoria_id)) {
+        if (isset($request->categoria_id) && $request->categoria_id != "Todas") {
             $posts = Post::where([['categoria_id', $request->categoria_id],['ativo','Sim']])->get();
             $categoria_id = $request->categoria_id;
 
