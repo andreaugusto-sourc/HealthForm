@@ -10,6 +10,41 @@ class Post extends Model
     use HasFactory;
     Protected $fillable = ['titulo','conteudo','ativo','imagem','categoria_id'];
 
+    public static function salvandoPost($post)
+    {
+        $post->save();
+    }
+
+    public static function atualizandoPost($post, $NovoPost)
+    {
+        $post->update($NovoPost);
+    }
+
+    public static function removendoPost($post_id)
+    {
+        Post::findOrFail($post_id)->delete();
+    }
+
+    public static function pegarPostsAtivosCategoria($categoria_id)
+    {
+        return Post::where([['categoria_id', $categoria_id],['ativo','Sim']])->get();
+    }
+
+    public static function pegarPostsAtivos()
+    {
+        return Post::where(['ativo' => 'Sim'])->get();
+    }
+
+    public static function pegarPosts()
+    {
+        return Post::all();
+    }
+
+    public static function pegarPost($post_id)
+    {
+        return Post::findOrFail($post_id);
+    }
+
     public static function uploadImagem($request) 
     {
         if (isset($request->imagem)){
