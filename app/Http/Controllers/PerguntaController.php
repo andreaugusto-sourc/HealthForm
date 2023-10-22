@@ -4,20 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Questionario;
 use App\Models\Pergunta;
-use App\Models\Resposta;
 use App\Enums\TiposPergunta;
 use Illuminate\Http\Request;
 
 class PerguntaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        
-    }
-
     public function create(Request $request)
     {   
         $tiposPergunta = TiposPergunta::cases();
@@ -25,41 +16,43 @@ class PerguntaController extends Controller
             $idQuestionario = request("adicionarPergunta");
             $request->session()->put('idQuestionario', $idQuestionario);
         }
+
         return view('perguntas.create',compact('tiposPergunta'));
     }
 
-    public function store(Request $request, Pergunta $Pergunta)
+    public function store(Request $request, Pergunta $pergunta)
     {
-        $Pergunta->fill($request->all());
-        $Pergunta->questionario_id = $request->session()->get('idQuestionario');
-        $Pergunta->save();
+        $pergunta->fill($request->all());
+        $questionario_id = $request->session()->get('idQuestionario');
+        Pergunta::salvandoPergunta($pergunta, $questionario_id);
+
         return redirect()->route('perguntas.create');
     }
 
     public function edit(string $id)
     {
-        return view('perguntas.edit',['Pergunta' => Pergunta::findOrFail($id)]);
+        return view('perguntas.edit', ['Pergunta' => Pergunta::pegarPergunta($id)]);
     }
 
     public function update(Request $request, string $id)
     {
-        Pergunta::findOrFail($id)->update($request->all());
+        Pergunta::atualizandoPergunta($id, $request->all());
+
         return redirect()->route('questionarios.index');
     }
 
     public function destroy(string $id)
     {
-        // apaga as respostas atreladas a pergunta
-        Resposta::where(['pergunta_id' => $id])->delete();
-        // apaga a pergunta
-        Pergunta::findOrFail($id)->delete();
+        Pergunta::removendoPergunta($id);
+
         return redirect()->route('questionarios.index');
     }
 
     public function dashboard(string $id)
     {
-        $Questionario = Questionario::findOrFail($id);
-        $Perguntas = Pergunta::where(['questionario_id' => $id])->get();
-        return view('perguntas.dashboard',compact('Questionario','Perguntas'));
+        $Questionario = Questionario::pegarQuestionario($id);
+        $Perguntas = Pergunta::pegarPerguntasQuestionario($Questionario->id);
+
+        return view('perguntas.dashboard', compact('Questionario','Perguntas'));
     }
 }
