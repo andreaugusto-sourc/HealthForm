@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('categoria_id');
             $table->string('titulo',60);
             $table->text('conteudo');
             $table->binary('imagem')->nullable();
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
+            $table->foreign("categoria_id")->references("id")->on("categorias");
             $table->timestamps();
         });
     }

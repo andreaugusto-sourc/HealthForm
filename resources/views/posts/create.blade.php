@@ -24,6 +24,13 @@
         <option>Não</option>
     </select>
 
+    <select class="form-select form-select-lg mb-3" name="categoria_id" aria-label=".form-select-lg example">
+        <option selected disabled>Categoria</option>
+        @foreach ($categorias as $categoria)
+        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+        @endforeach
+    </select>
+
     <div class="input-group input-group-lg mb-3">
           <input type="file" name="imagem" class="form-control" id="inputGroupFile02">
           <label class="input-group-text" for="inputGroupFile02">Imagem Ilustrativa (opcional)</label>

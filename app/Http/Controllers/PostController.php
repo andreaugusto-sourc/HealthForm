@@ -3,20 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function index () 
+    public function index (Request $request) 
     {
+        $categorias = Categoria::all();
+
+        if (isset($request->categoria_id) && $request->categoria_id != "Todas") {
+            $posts = Post::where([['categoria_id', $request->categoria_id],['ativo','Sim']])->get();
+            $categoria_id = $request->categoria_id;
+
+            return view('posts.index',compact('posts','categorias','categoria_id'));
+        }
+
         $posts = Post::where(['ativo' => 'Sim'])->get();
-        return view('posts.index',compact('posts'));
+
+        return view('posts.index',compact('posts','categorias'));
     }
 
     public function create ()
     {
-        return view('posts.create');
+        return view('posts.create', ['categorias' => Categoria::all()]);
     }
 
     public function store(Request $request, Post $Post)

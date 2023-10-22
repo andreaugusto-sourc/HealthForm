@@ -34,14 +34,20 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark p-3">
+                        <li><a class="nav-link text-light dropdown-item fs-4" href="{{route('posts.index')}}">Textos Motivacionais</a></li>
+
+                        <li><a class="nav-link text-light dropdown-item fs-4" href="{{route('questionarios.index')}}">Questionários</a></li>
+
+                        @if (isset(Auth::user()->admin))
+                        <li><a class="nav-link text-light dropdown-item fs-4" href="{{route('dashboard')}}">Dashboard</a></li>
+                        @endif
+
                         <li>
                             <form action="{{route('logout')}}" method="POST">@csrf<a
                                     class="nav-link dropdown-item text-light fs-4" href="{{route('logout')}}"
                                     onclick="event.preventDefault();this.closest('form').submit();">Logout</a></form>
                         </li>
-                        @if (isset(Auth::user()->admin))
-                        <li><a class="nav-link text-light dropdown-item fs-4" href="{{route('dashboard')}}">Dashboard</a></li>
-                        @endif
+
                     </ul>
                 </div>
                 @endauth

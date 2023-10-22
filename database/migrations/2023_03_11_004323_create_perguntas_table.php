@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('questionario_id');
             $table->string('texto',120);
             $table->string('placeholder',60)->nullable();
-            $table->string('tipo',60);
+            $table->string('tipo',60)->default('text');
             $table->foreign('questionario_id')->references('id')->on('questionarios');
             $table->timestamps();
         });

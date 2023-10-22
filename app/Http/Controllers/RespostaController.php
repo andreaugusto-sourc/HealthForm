@@ -48,7 +48,7 @@ class RespostaController extends Controller
         $Questionario = Questionario::findOrFail($id);
         $perguntas = Pergunta::where(['questionario_id' => $Questionario->id])->get();
         $respostas = Resposta::all();
-        $users = User::all();
+        $users = User::where('admin', null)->get();
         return view('respostas.show',compact('Questionario','perguntas','respostas','users'));
     }
 }

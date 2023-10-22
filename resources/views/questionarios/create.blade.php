@@ -24,6 +24,13 @@
         <option>Não</option>
     </select>
 
+    <select class="form-select form-select-lg mb-3" name="categoria_id" aria-label=".form-select-lg example">
+        <option selected disabled>Categoria</option>
+        @foreach ($categorias as $categoria)
+        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+        @endforeach
+    </select>
+
     <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 
