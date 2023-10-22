@@ -10,7 +10,7 @@
 
     <div class="input-group input-group-lg mb-3">
         <span class="input-group-text" id="inputGroup-sizing-lg">Texto da pergunta</span>
-        <input type="text" name="texto" placeholder="Não coloque '?' no final da pergunta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
+        <input type="text" name="texto" placeholder="Escreva uma pergunta aqui" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
     </div>
 
     <div class="input-group input-group-lg mb-3">

@@ -22,6 +22,9 @@ class PerguntaController extends Controller
 
     public function store(Request $request, Pergunta $pergunta)
     {
+        //remove se o usuário colocar '?' no final do texto da pergunta
+        $request->texto = str_replace('?','', $request->texto);
+        
         $pergunta->fill($request->all());
         $questionario_id = $request->session()->get('idQuestionario');
         Pergunta::salvandoPergunta($pergunta, $questionario_id);
