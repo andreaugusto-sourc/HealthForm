@@ -7,7 +7,7 @@
 <div class="d-flex flex-column w-100">
 
     <form id="form_categorias" class="d-flex align-items-center justify-content-around bg-dark pt-3 pb-3" action="{{route('posts.index')}}" method="get">
-        <h2>Filtrar por:</h2>
+        <h2>Filtrar por categorias:</h2>
         @csrf
 
         <select onchange="enviarFormulario()" class="form-select form-select-lg w-50" aria-label="Default select example" name="categoria_id">
