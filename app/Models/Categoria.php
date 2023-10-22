@@ -10,4 +10,9 @@ class Categoria extends Model
     use HasFactory;
 
     protected $fillable = ['nome'];
+
+    public static function pegarCategorias ()
+    {
+        return Categoria::all();
+    }
 }
