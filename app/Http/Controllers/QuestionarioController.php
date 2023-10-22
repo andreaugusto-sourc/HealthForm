@@ -16,31 +16,30 @@ class QuestionarioController extends Controller
             $request->session()->pull('Questionario_id', null);
         }
 
-        $categorias = Categoria::all();
+        $categorias = Categoria::pegarCategorias();
 
         if(isset($request->categoria_id) && $request->categoria_id != "Todas") {
-            $questionarios = Questionario::doesntHave('respostas')->where([['ativo','Sim'], ['categoria_id', $request->categoria_id]])->get();
             $categoria_id = $request->categoria_id;
+            $questionarios = Questionario::pegarQuestionariosSemRespostasCategoria($categoria_id);
 
             return view('questionarios.index',compact('questionarios','categorias', 'categoria_id'));
         }
 
         //Pegando os questionarios que não tem respostas e que estão com status ativo
-        $questionarios = Questionario::doesntHave('respostas')->where('ativo','Sim')->get();
-
+        $questionarios = Questionario::pegarQuestionariosSemRespostas();
 
         return view('questionarios.index',compact('questionarios','categorias'));
     }
 
     public function create()
     {
-        return view('questionarios.create', ['categorias' => Categoria::all()]);
+        return view('questionarios.create', ['categorias' => Categoria::pegarCategorias()]);
     }
 
     public function store(Request $request, Questionario $Questionario)
     {
         $Questionario->fill($request->all());
-        $Questionario->save();
+        $Questionario::salvandoQuestionario($Questionario);
         //Pegando o ultimo id registrado
         $idQuestionario = $Questionario->id;
         //Armazenando o id numa sessão para guardar a chave estrangeira
@@ -50,36 +49,33 @@ class QuestionarioController extends Controller
 
     public function show(string $id)
     {
-        $Questionario = Questionario::findOrFail($id);
-        $perguntas = Pergunta::where(['Questionario_id' => $Questionario->id])->get();
+        $Questionario = Questionario::pegarQuestionario($id);
+        $perguntas = Pergunta::pegarPerguntasQuestionario($Questionario->id);
 
         return view('questionarios.show',compact('Questionario','perguntas'));
     }
 
     public function edit(string $id)
     {
-        return view('questionarios.edit',['Questionario' => Questionario::findOrFail($id)]);
+        return view('questionarios.edit',['Questionario' => Questionario::pegarQuestionario($id)]);
     }
 
     public function update(Request $request, string $id)
     {
-        Questionario::findOrFail($id)->update($request->all());
+        Questionario::atualizandoQuestionario($id, $request->all());
+
         return redirect()->route('questionarios.index');
     }
 
     public function destroy(string $id)
     {
-        // apaga as respostas atreladas ao questionario
-        Resposta::where(['questionario_id' => $id])->delete();
-        // apaga as perguntas atreladas ao questionario
-        Pergunta::where(['questionario_id' => $id])->delete();
-        // apaga o questionario
-        Questionario::findOrFail($id)->delete();
+        Questionario::removendoQuestionario($id);
+
         return redirect()->route('questionarios.index');
     }
 
     public function dashboard() 
     {
-        return view('questionarios.dashboard',['Questionarios' => Questionario::all()]);
+        return view('questionarios.dashboard',['Questionarios' => Questionario::pegarQuestionarios()]);
     }
 }
