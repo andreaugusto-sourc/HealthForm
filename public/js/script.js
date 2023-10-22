@@ -19,3 +19,7 @@ function nextText(cont){
     currentIndex = Math.max((currentIndex + cont) % titles.length, 0);
     titulo_texto.innerText = titles[currentIndex];
 }
+
+function enviarFormulario() {
+    document.getElementById('form_categorias').submit();
+}
