@@ -11,12 +11,11 @@ class Resposta extends Model
 
     protected $table = 'respostas';
 
-    protected $fillable = ['questionario_id','pergunta_id','user_id','texto'];
+    protected $fillable = ['pergunta_id','user_id','texto'];
 
-    public static function salvandoResposta($questionario_id, $user_id, $pergunta_id, $texto)
+    public static function salvandoResposta($user_id, $pergunta_id, $texto)
     {
         Resposta::create([
-            'questionario_id' => $questionario_id,
             'pergunta_id' => $pergunta_id,
             'user_id' => $user_id,
             'texto' => $texto
@@ -31,5 +30,10 @@ class Resposta extends Model
     public function questionario()
     {
         return $this->belongsTo(Questionario::class);
+    }
+
+    public function pergunta()
+    {
+        return $this->belongsTo(Pergunta::class, 'pergunta_id');
     }
 }

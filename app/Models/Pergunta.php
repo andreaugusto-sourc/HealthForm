@@ -40,4 +40,14 @@ class Pergunta extends Model
         return Pergunta::findOrFail($pergunta_id);
     }
 
+    public function questionario()
+    {
+        return $this->belongsTo(Questionario::class, 'questionario_id');
+    }
+
+    public function respostas()
+    {
+        return $this->hasMany(Resposta::class, 'pergunta_id');
+    }
+
 }

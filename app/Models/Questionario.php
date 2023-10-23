@@ -53,8 +53,23 @@ class Questionario extends Model
         return Questionario::findOrFail($questionario_id);
     }
 
+    public static function pegarQuestionarioPerguntas($questionario_id)
+    {
+        return Questionario::with(['perguntas'])->where('id', $questionario_id)->first();
+    }
+
+    public static function pegarQuestionarioPerguntasRespostas($questionario_id)
+    {
+        return Questionario::with(['perguntas', 'perguntas.respostas'])->where('id', $questionario_id)->first();
+    }
+    
+    public function perguntas()
+    {
+        return $this->hasMany(Pergunta::class, 'questionario_id');
+    }
+
     public function respostas()
     {
-        return $this->hasMany(Resposta::class);
+        return $this->hasManyThrough(Resposta::class, Pergunta::class, 'questionario_id', 'pergunta_id');
     }
 }
