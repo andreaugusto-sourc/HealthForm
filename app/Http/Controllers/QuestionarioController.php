@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use App\Models\Questionario;
 use App\Models\Pergunta;
-use App\Models\Resposta;
 use Illuminate\Http\Request;
 
 class QuestionarioController extends Controller
@@ -44,15 +43,15 @@ class QuestionarioController extends Controller
         $idQuestionario = $Questionario->id;
         //Armazenando o id numa sessão para guardar a chave estrangeira
         $request->session()->put('idQuestionario', $idQuestionario);
+        
         return redirect()->route('perguntas.create');
     }
 
     public function show(string $id)
     {
-        $Questionario = Questionario::pegarQuestionario($id);
-        $perguntas = Pergunta::pegarPerguntasQuestionario($Questionario->id);
+        $questionario = Questionario::pegarQuestionarioPerguntas($id);
 
-        return view('questionarios.show',compact('Questionario','perguntas'));
+        return view('questionarios.show', compact('questionario'));
     }
 
     public function edit(string $id)

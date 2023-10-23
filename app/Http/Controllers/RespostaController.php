@@ -15,7 +15,7 @@ class RespostaController extends Controller
         $user_id = Auth::user()->id;
         
         foreach ($request->texto as $key => $texto) {
-            Resposta::salvandoResposta($request->questionario_id, $user_id, $request->pergunta_id[$key], $texto);
+            Resposta::salvandoResposta($user_id, $request->pergunta_id[$key], $texto);
         }
 
         return redirect()->route('questionarios.index');
@@ -23,11 +23,9 @@ class RespostaController extends Controller
 
     public function show(string $id)
     {
-        $Questionario = Questionario::pegarQuestionario($id);
-        $perguntas = Pergunta::pegarPerguntasQuestionario($Questionario->id);
-        $respostas = Resposta::pegarRespostas();
+        $questionario = Questionario::pegarQuestionarioPerguntasRespostas($id);
         $users = User::pegarUsuariosExcetoAdmin();
 
-        return view('respostas.show', compact('Questionario','perguntas','respostas','users'));
+        return view('respostas.show', compact('questionario','users'));
     }
 }

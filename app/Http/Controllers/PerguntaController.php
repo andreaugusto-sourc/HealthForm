@@ -22,10 +22,10 @@ class PerguntaController extends Controller
 
     public function store(Request $request, Pergunta $pergunta)
     {
-        //remove se o usuário colocar '?' no final do texto da pergunta
-        $request->texto = str_replace('?','', $request->texto);
-        
         $pergunta->fill($request->all());
+        //remove se o usuário colocar '?' no final do texto da pergunta
+        $pergunta->texto = str_replace('?','', $pergunta->texto);
+
         $questionario_id = $request->session()->get('idQuestionario');
         Pergunta::salvandoPergunta($pergunta, $questionario_id);
 
@@ -34,7 +34,7 @@ class PerguntaController extends Controller
 
     public function edit(string $id)
     {
-        return view('perguntas.edit', ['Pergunta' => Pergunta::pegarPergunta($id)]);
+        return view('perguntas.edit', ['pergunta' => Pergunta::pegarPergunta($id)]);
     }
 
     public function update(Request $request, string $id)
@@ -53,9 +53,8 @@ class PerguntaController extends Controller
 
     public function dashboard(string $id)
     {
-        $Questionario = Questionario::pegarQuestionario($id);
-        $Perguntas = Pergunta::pegarPerguntasQuestionario($Questionario->id);
+        $questionario = Questionario::pegarQuestionarioPerguntas($id);
 
-        return view('perguntas.dashboard', compact('Questionario','Perguntas'));
+        return view('perguntas.dashboard', compact('questionario'));
     }
 }
