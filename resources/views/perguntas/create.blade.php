@@ -18,12 +18,12 @@
         <input type="text" name="placeholder" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
     </div>
 
-    <select class="form-select form-select-lg mb-3" name="tipo" aria-label=".form-select-lg example">
+    {{-- <select class="form-select form-select-lg mb-3" name="tipo" aria-label=".form-select-lg example">
         <option selected disabled>Tipo</option>
         @foreach ($tiposPergunta as $tipoPergunta)
             <option>{{$tipoPergunta->value}}</option>
         @endforeach
-    </select>
+    </select> --}}
 
     <div class="d-flex-reverse m-auto pt-2">
         <button type="submit" class="btn btn-primary">Cadastrar</button>
