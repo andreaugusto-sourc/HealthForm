@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Questionario extends Model
 {
@@ -35,12 +36,20 @@ class Questionario extends Model
 
     public static function pegarQuestionariosSemRespostas()
     {
-        return Questionario::doesntHave('respostas')->where('ativo','Sim')->get();
+        $user_id = Auth::user()->id;
+
+        return Questionario::WhereDoesntHave('respostas', function($query) use ($user_id) {
+            $query->where('user_id', $user_id);
+        })->where('ativo','Sim')->get();
     }
 
     public static function pegarQuestionariosSemRespostasCategoria($categoria_id)
     {
-        return Questionario::doesntHave('respostas')->where([['ativo','Sim'], ['categoria_id', $categoria_id]])->get();
+        $user_id = Auth::user()->id;
+        
+        return Questionario::WhereDoesntHave('respostas', function($query) use ($user_id) {
+            $query->where('user_id', $user_id);
+        })->where([['ativo','Sim'], ['categoria_id', $categoria_id]])->get();
     }
 
     public static function pegarQuestionarios()
