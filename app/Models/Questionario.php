@@ -26,12 +26,17 @@ class Questionario extends Model
 
     public static function removendoQuestionario($questionario_id)
     {
+        $questionario = Questionario::pegarQuestionario($questionario_id);
         // apaga as respostas atreladas ao questionario
-        Resposta::where(['questionario_id' => $questionario_id])->delete();
+        $questionario->respostas->each(function($resposta) {
+            $resposta->delete();
+        });
         // apaga as perguntas atreladas ao questionario
-        Pergunta::where(['questionario_id' => $questionario_id])->delete();
+        $questionario->perguntas->each(function($pergunta) {
+            $pergunta->delete();
+        });
         // apaga o questionario
-        Questionario::findOrFail($questionario_id)->delete();
+        $questionario->delete();
     }
 
     public static function pegarQuestionariosSemRespostas()
