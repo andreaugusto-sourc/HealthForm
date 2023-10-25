@@ -1,25 +1,28 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+@extends('layouts.main')
+
+@section('title', 'Esqueci minha senha')
+
+@section('content')
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form method="POST" action="{{ route('password.email') }}" class="d-flex flex-column bg-default">
         @csrf
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <h1 class="text-center text-dark w-100">Esqueci minha senha</h1>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
+        <p class="mb-4 fs-5 fw-semibold">
+            {{ __('Esqueceu sua senha? Sem problemas. Apenas nos deixe saber seu endereço de e-mail e nós enviaremos um e-mail com um link para escolher uma nova senha.') }}
+        </p>
+
+        <!-- Email Address -->
+
+        <input type="email" name="email" class="form-control form-control-lg mb-3" required placeholder="E-mail" :value="old('email')" required autofocus>
+
+        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+        <button type="submit" class="btn btn-primary">Resetar senha</button>
+
     </form>
-</x-guest-layout>
+@endsection
