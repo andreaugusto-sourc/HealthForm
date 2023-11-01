@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('categoria_id');
             $table->string('titulo',60);
-            $table->string('descricao',90);
+            $table->string('descricao',120);
             $table->enum('ativo',['Sim',"Não"])->default("Sim");
             $table->foreign("categoria_id")->references("id")->on("categorias");
             $table->timestamps();
