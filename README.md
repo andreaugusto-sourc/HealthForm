@@ -1,4 +1,4 @@
-# Rodando o sistemaa
+# Rodando o sistema
 - composer install
 - composer update
 - php artisan key:generate

@@ -2,6 +2,8 @@
 
 @section('title','HealthForm - Questionários')
 
+@section('title_page','Questionários')
+
 @section('content')
 
 <div class="d-flex flex-column w-100">
@@ -33,7 +35,7 @@
 
     </form>
 
-    <div class="d-flex flex-wrap align-items-center">
+    <div class="d-flex flex-wrap align-items-baseline questionarios">
       @foreach ($questionarios as $questionario)
         <div class="card" style="width: 18rem;">
             <div class="card-body text-center">

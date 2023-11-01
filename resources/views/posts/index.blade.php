@@ -2,6 +2,8 @@
 
 @section('title','HealthForm - Textos Motivacionais')
 
+@section('title_page','Textos Motivacionais')
+
 @section('content')
 
 <div class="d-flex flex-column w-100">
@@ -33,7 +35,7 @@
 
     </form>
 
-    <div class="d-flex flex-wrap align-items-center posts">
+    <div class="d-flex flex-wrap align-items-baseline posts">
       @foreach ($posts as $post)
         <div class="card" style="width: 18rem;">
             <div class="card-body text-center">
