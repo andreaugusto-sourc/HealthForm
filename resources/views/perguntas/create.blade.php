@@ -26,8 +26,8 @@
     </select> --}}
 
     <div class="d-flex-reverse m-auto pt-2">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <a href="{{route('questionarios.index')}}" class="text-dark fs-3 text-center fw-bold ms-5">Finalizar</a>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <a href="{{route('questionarios.index')}}" class="btn btn-danger text-white">Finalizar</a>
     </div>
 </form>
 @endsection
