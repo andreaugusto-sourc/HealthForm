@@ -15,6 +15,11 @@
         <input type="text" value="{{$pergunta->texto}}" name="texto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
     </div>
 
+    <div class="input-group input-group-lg mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-lg">Orientação da pergunta</span>
+        <input type="text" value="{{$pergunta->placeholder}}" name="placeholder" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    </div>
+
     <button type="submit" class="btn btn-primary">Editar</button>
 
 </form>
