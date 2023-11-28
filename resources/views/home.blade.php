@@ -2,6 +2,8 @@
 
 @section('title','HealthForm - Home')
 
+@section('title_page', 'Seja bem-vindo, '. Auth::user()->name.'!')
+
 @section('content')
 
 <section class="d-flex justify-content-between flex-wrap home">
