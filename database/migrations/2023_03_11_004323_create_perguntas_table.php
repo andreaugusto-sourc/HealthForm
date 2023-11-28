@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('perguntas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('questionario_id');
-            $table->string('texto',120);
+            $table->string('texto', 255);
             $table->string('placeholder',60)->nullable();
             $table->string('tipo',60)->default('text');
             $table->foreign('questionario_id')->references('id')->on('questionarios');

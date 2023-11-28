@@ -35,7 +35,7 @@
 
     </form>
 
-    <div class="d-flex flex-wrap align-items-baseline posts">
+    <div class="d-flex flex-wrap justify-content-center align-items-baseline posts">
       @foreach ($posts as $post)
         <div class="card" style="width: 18rem;">
             <div class="card-body text-center">
