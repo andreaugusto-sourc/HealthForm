@@ -2,6 +2,8 @@
 
 @section('title','HealthForm - Dashboard')
 
+@section('title_page', 'Página de Dashboards')
+
 @section('content')
 
 <section class="d-flex justify-content-between flex-wrap home">
