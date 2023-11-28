@@ -24,6 +24,11 @@ class User extends Authenticatable
         'admin',
     ];
 
+    public static function pegarUsuariosExcetoAdmin()
+    {
+        return User::where('admin', null)->get();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -11,45 +11,48 @@ class PostController extends Controller
 {
     public function index (Request $request) 
     {
-        $categorias = Categoria::all();
+        $categorias = Categoria::pegarCategorias();
 
         if (isset($request->categoria_id) && $request->categoria_id != "Todas") {
-            $posts = Post::where([['categoria_id', $request->categoria_id],['ativo','Sim']])->get();
             $categoria_id = $request->categoria_id;
+            $posts = Post::pegarPostsAtivosCategoria($categoria_id);
 
-            return view('posts.index',compact('posts','categorias','categoria_id'));
+            return view('posts.index', compact('posts','categorias','categoria_id'));
         }
 
-        $posts = Post::where(['ativo' => 'Sim'])->get();
+        $posts = Post::pegarPostsAtivos();
 
-        return view('posts.index',compact('posts','categorias'));
+        return view('posts.index', compact('posts','categorias'));
     }
 
     public function create ()
     {
-        return view('posts.create', ['categorias' => Categoria::all()]);
+        return view('posts.create', ['categorias' => Categoria::pegarCategorias()]);
     }
 
     public function store(Request $request, Post $Post)
     {
         $Post->fill($request->all());
         $Post->imagem = Post::uploadImagem($request);
-        $Post->save();
+        Post::salvandoPost($Post);
+
         return redirect()->route('posts.index');
     }
 
     public function show($id)
     {   
-        return view('posts.show',['Post' => Post::findOrFail($id)]);
+        return view('posts.show', ['Post' => Post::pegarPost($id)]);
     }
 
     public function edit($id)
     {
-        return view('posts.edit',['Post' => Post::findOrFail($id)]);
+        return view('posts.edit', ['Post' => Post::pegarPost($id)]);
     }
 
     public function update($id, Request $request)
     {
+        $Post = Post::pegarPost($id);
+
         $NovoPost = [
             'titulo' => $request->titulo,
             'conteudo' => $request->conteudo,
@@ -58,22 +61,23 @@ class PostController extends Controller
         ];
 
         if(!isset($request->imagem)) {
-            $NovoPost['imagem'] = Post::findOrFail($id)->imagem;
+            $NovoPost['imagem'] = $Post->imagem;
         }
 
-        Post::findOrFail($id)->update($NovoPost);
+        Post::atualizandoPost($Post, $NovoPost);
 
         return redirect()->route('dashboard.posts');
     }
 
     public function destroy($id)
     {
-        Post::findOrFail($id)->delete();
+        Post::removendoPost($id);
+
         return redirect()->route('dashboard.posts');
     }
 
     public function dashboard()
     {
-        return view('posts.dashboard',['posts' => Post::all()]);
+        return view('posts.dashboard', ['posts' => Post::pegarPosts()]);
     }
 }

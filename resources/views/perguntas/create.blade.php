@@ -10,7 +10,7 @@
 
     <div class="input-group input-group-lg mb-3">
         <span class="input-group-text" id="inputGroup-sizing-lg">Texto da pergunta</span>
-        <input type="text" name="texto" placeholder="Não coloque '?' no final da pergunta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
+        <input type="text" name="texto" placeholder="Escreva uma pergunta aqui" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required>
     </div>
 
     <div class="input-group input-group-lg mb-3">
@@ -18,16 +18,16 @@
         <input type="text" name="placeholder" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
     </div>
 
-    <select class="form-select form-select-lg mb-3" name="tipo" aria-label=".form-select-lg example">
+    {{-- <select class="form-select form-select-lg mb-3" name="tipo" aria-label=".form-select-lg example">
         <option selected disabled>Tipo</option>
         @foreach ($tiposPergunta as $tipoPergunta)
             <option>{{$tipoPergunta->value}}</option>
         @endforeach
-    </select>
+    </select> --}}
 
     <div class="d-flex-reverse m-auto pt-2">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-        <a href="{{route('questionarios.index')}}" class="text-dark fs-3 text-center fw-bold ms-5">Finalizar</a>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <a href="{{route('questionarios.index')}}" class="btn btn-danger text-white">Finalizar</a>
     </div>
 </form>
 @endsection

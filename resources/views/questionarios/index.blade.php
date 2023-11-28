@@ -2,15 +2,17 @@
 
 @section('title','HealthForm - Questionários')
 
+@section('title_page','Questionários')
+
 @section('content')
 
 <div class="d-flex flex-column w-100">
 
-    <form class="d-flex align-items-center justify-content-around bg-dark pt-3 pb-3" action="{{route('questionarios.index')}}" method="get">
+    <form id="form_categorias" class="d-flex align-items-center justify-content-around bg-dark pt-3 pb-3" action="{{route('questionarios.index')}}" method="get">
         <h2>Filtrar por categorias:</h2>
         @csrf
 
-        <select class="form-select form-select-lg w-50" aria-label="Default select example" name="categoria_id">
+        <select onchange="enviarFormulario()" class="form-select form-select-lg w-50" aria-label="Default select example" name="categoria_id">
 
           <option value="Todas" selected>Todas</option>
 
@@ -31,10 +33,9 @@
           @endforeach
         </select>
 
-        <button type="submit" class="btn btn-light btn-lg">Filtrar</button>
     </form>
 
-    <div class="d-flex flex-wrap align-items-center">
+    <div class="d-flex flex-wrap justify-content-center align-items-baseline questionarios">
       @foreach ($questionarios as $questionario)
         <div class="card" style="width: 18rem;">
             <div class="card-body text-center">

@@ -25,6 +25,7 @@
                     <a class="navbar-brand text-white ms-5 fs-2 fw-bold" href="{{route('home')}}">HealthForm</a>
                 </div>
                 @auth
+                <article class="navbar-brand text-white ms-5 fs-2 fw-bold">@yield('title_page')</article>
                 <div class="nav-item dropdown"><a class="nav-link dropdown-toggle fs-3" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="menu">
