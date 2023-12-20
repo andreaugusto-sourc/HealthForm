@@ -6,10 +6,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header text-dark">
-                <h1>Dashboard de Posts</h1>
+                <h1>Acompanhamento de Textos Psicoeducativos</h1>
             </div>
             <div class="card-body">
-                <a href="{{route('posts.create')}}" class="btn btn-success btn-lg">Adicionar Post</a>
+                <a href="{{route('posts.create')}}" class="btn btn-success btn-lg">Adicionar Texto Psicoeducativo</a>
             </div>
         </div>
     </div>

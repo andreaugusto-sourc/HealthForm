@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-@section('title','HealthForm - Textos Motivacionais')
+@section('title','HealthForm - Textos Psicoeducativos')
 
-@section('title_page','Textos Motivacionais')
+@section('title_page','Textos Psicoeducativos')
 
 @section('content')
 

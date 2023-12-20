@@ -6,7 +6,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header text-dark">
-                <h1>Dashboard de Questionários</h1>
+                <h1>Acompanhamento de Questionários</h1>
             </div>
             <div class="card-body">
                 <a href="{{route('questionarios.create')}}" class="btn btn-success btn-lg">Adicionar Questionário</a>
